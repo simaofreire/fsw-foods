@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint --fix",
-    "prepare": "husky"
+    "prepare": "husky",
+    "cmt": "better-commits"
   },
   "prisma": {
     "seed": "ts-node ./prisma/seed.ts"
