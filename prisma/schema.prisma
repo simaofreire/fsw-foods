@@ -9,8 +9,8 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
   directUrl = env("DIRECT_URL")
 }
 
@@ -33,14 +33,14 @@ model Category {
 }
 
 model Product {
-  id              String     @id @default(uuid())
-  name            String
-  description     String
-  imageUrl        String
-  price           Decimal    @db.Decimal(10, 2)
-  discountPercent Int        @default(0)
-  restaurantId    String
-  restaurant      Restaurant @relation(fields: [restaurantId], references: [id])
-  categoryId      String
-  category        Category   @relation(fields: [categoryId], references: [id])
+  id                 String     @id @default(uuid())
+  name               String
+  description        String
+  imageUrl           String
+  price              Decimal    @db.Decimal(10, 2)
+  discountPercentage Int        @default(0)
+  restaurantId       String
+  restaurant         Restaurant @relation(fields: [restaurantId], references: [id])
+  categoryId         String
+  category           Category   @relation(fields: [categoryId], references: [id])
 }
